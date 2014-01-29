@@ -39,26 +39,30 @@
     }
 }
 
-//FIXME: Error when removing device
 - (void)deviceBrowser:(ICDeviceBrowser *)browser didRemoveDevice:(ICDevice *)device moreGoing:(BOOL)moreGoing {
     //Remove the device from the scanners array
-    [scannersController removeObject:device];
+    [self willChangeValueForKey:@"_scanners"];
+    [scanners removeObject:device];
+    [self didChangeValueForKey:@"_scanners"];
     [device requestCloseSession];
 }
 
-//FIXME: Error when removing device
 - (void)didRemoveDevice:(ICDevice *)device {
     //Remove the device from the scanners array
-    [scannersController removeObject:device];
+    [self willChangeValueForKey:@"_scanners"];
+    [scanners removeObject:device];
+    [self didChangeValueForKey:@"_scanners"];
     [device requestCloseSession];
 }
 
 //MARK: - Scanner Device Delegate Methods
+//FIXME: Error always showing
 - (void)device:(ICDevice *)device didOpenSessionWithError:(NSError *)error {
     NSAlert *alert = [NSAlert alertWithMessageText:@"Could not open session with scanner." defaultButton:@"Ok" alternateButton:nil otherButton:nil informativeTextWithFormat:[NSString stringWithFormat:@"An error occured while trying to open a session with %@.", [device name]]];
     [alert runModal];
 }
 
+//FIXME: Error always showing
 - (void)scannerDevice:(ICScannerDevice *)scanner didSelectFunctionalUnit:(ICScannerFunctionalUnit *)functionalUnit error:(NSError *)error {
     NSAlert *alert = [NSAlert alertWithMessageText:@"Could not select a functional unit." defaultButton:@"Ok" alternateButton:nil otherButton:nil informativeTextWithFormat:[NSString stringWithFormat:@"An error occured while trying to select a functional unit for %@.", [scanner name]]];
     [alert runModal];
@@ -88,6 +92,7 @@
     [pdfView setAutoScales:YES];
 }
 
+//FIXME: Error always showing
 - (void)device:(ICDevice *)device didCloseSessionWithError:(NSError *)error {
     if (error) {
         NSAlert *alert = [NSAlert alertWithMessageText:@"Could not close session with scanner." defaultButton:@"Ok" alternateButton:nil otherButton:nil informativeTextWithFormat:[NSString stringWithFormat:@"An error occured while trying to close a session with %@.", [device name]]];
