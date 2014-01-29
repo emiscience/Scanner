@@ -7,13 +7,19 @@
     NSMutableArray *scanners;
     IBOutlet NSArrayController *scannersController;
     IBOutlet PDFView *pdfView;
+    IBOutlet NSPopUpButton *resolutionPopUpButton;
+    IBOutlet NSSegmentedControl *kindSegmentedControl;
+    IBOutlet NSPopUpButton *sizePopUpButton;
+    IBOutlet NSSegmentedControl *orientationSegmentedControl;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) NSMutableArray *_scanners;
 
 - (IBAction)scan:(id)sender;
+
 - (ICScannerDevice *)selectedScanner;
 - (BOOL)scannerAvailable;
+- (NSRect)scanArea;
 
 @end

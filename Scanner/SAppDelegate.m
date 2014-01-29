@@ -94,6 +94,7 @@
 }
 
 //MARK: - Interface Builder Actions
+//FIXME: Black and white not working
 - (IBAction)scan:(id)sender {
     //Get the selected scanner and it's functional unit
     ICScannerDevice *scanner = [self selectedScanner];
@@ -102,10 +103,10 @@
     //If there is no scan or overviewscan in progress
     if (![unit overviewScanInProgress] && ![unit scanInProgress]) {
         //Setup the functional unit and start the scan
-        [unit setScanArea:NSMakeRect(0.0, 0.0, 1240.5, 1753.5)];
-        [unit setResolution:[[unit supportedResolutions] indexGreaterThanOrEqualToIndex:150]];
+        [unit setScanArea:[self scanArea]];
+        [unit setResolution:[[unit supportedResolutions] indexGreaterThanOrEqualToIndex:[[resolutionPopUpButton selectedItem] tag]]];
         [unit setBitDepth:ICScannerBitDepth8Bits];
-        [unit setPixelDataType:ICScannerPixelDataTypeGray];
+        [unit setPixelDataType:[kindSegmentedControl selectedSegment]];
         [scanner requestScan];
     } else {
         //Cancel the ongoing scan
@@ -126,6 +127,39 @@
     } else {
         return YES;
     }    
+}
+
+//???: Better way
+- (NSRect)scanArea {
+    //Get the variables from interface elements
+    NSInteger orientation = [orientationSegmentedControl selectedSegment]; //0=Portrait 1=Landscape
+    NSString *size = [[sizePopUpButton selectedItem] title];
+    CGFloat resolution = [[resolutionPopUpButton selectedItem] tag];
+    
+    //If the orientation is portrait or else if it is landscape
+    if (orientation == 0) {
+        //If the size is A4, A5, A6 or else if it is Letter
+        if ([size isEqualToString:@"A4"]) {
+            return NSMakeRect(0.0, 0.0, 8.27 * resolution, 11.69 * resolution);
+        } else if ([size isEqualToString:@"A5"]) {
+            return NSMakeRect(0.0, 0.0, 5.83 * resolution, 8.27 * resolution);
+        } else if ([size isEqualToString:@"A6"]) {
+            return NSMakeRect(0.0, 0.0, 4.13 * resolution, 5.83 * resolution);
+        } else {
+            return NSMakeRect(0.0, 0.0, 8.5 * resolution, 11.0 * resolution);
+        }
+    } else {
+        //If the size is A4, A5, A6 or else if it is Letter
+        if ([size isEqualToString:@"A4"]) {
+            return NSMakeRect(0.0, 0.0, 11.69 * resolution, 8.27 * resolution);
+        } else if ([size isEqualToString:@"A5"]) {
+            return NSMakeRect(0.0, 0.0, 8.27 * resolution, 5.83 * resolution);
+        } else if ([size isEqualToString:@"A6"]) {
+            return NSMakeRect(0.0, 0.0, 5.83 * resolution, 4.13 * resolution);
+        } else {
+            return NSMakeRect(0.0, 0.0, 11.0 * resolution, 8.5 * resolution);
+        }
+    }
 }
 
 @end
