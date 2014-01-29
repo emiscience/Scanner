@@ -56,16 +56,16 @@
 }
 
 //MARK: - Scanner Device Delegate Methods
-//FIXME: Error always showing
 - (void)device:(ICDevice *)device didOpenSessionWithError:(NSError *)error {
-    NSAlert *alert = [NSAlert alertWithMessageText:@"Could not open session with scanner." defaultButton:@"Ok" alternateButton:nil otherButton:nil informativeTextWithFormat:[NSString stringWithFormat:@"An error occured while trying to open a session with %@.", [device name]]];
-    [alert runModal];
+    if ([error isNotEqualTo:nil]) {
+        NSLog(@"%@", error);
+    }
 }
 
-//FIXME: Error always showing
 - (void)scannerDevice:(ICScannerDevice *)scanner didSelectFunctionalUnit:(ICScannerFunctionalUnit *)functionalUnit error:(NSError *)error {
-    NSAlert *alert = [NSAlert alertWithMessageText:@"Could not select a functional unit." defaultButton:@"Ok" alternateButton:nil otherButton:nil informativeTextWithFormat:[NSString stringWithFormat:@"An error occured while trying to select a functional unit for %@.", [scanner name]]];
-    [alert runModal];
+    if ([error isNotEqualTo:nil]) {
+        NSLog(@"%@", error);
+    }
 }
 
 //???: Better way to redraw pdf view
@@ -92,11 +92,9 @@
     [pdfView setAutoScales:YES];
 }
 
-//FIXME: Error always showing
 - (void)device:(ICDevice *)device didCloseSessionWithError:(NSError *)error {
-    if (error) {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"Could not close session with scanner." defaultButton:@"Ok" alternateButton:nil otherButton:nil informativeTextWithFormat:[NSString stringWithFormat:@"An error occured while trying to close a session with %@.", [device name]]];
-        [alert runModal];
+    if ([error isNotEqualTo:nil]) {
+        NSLog(@"%@", error);
     }
 }
 
