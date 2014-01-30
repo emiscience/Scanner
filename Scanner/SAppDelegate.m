@@ -137,8 +137,12 @@
     }
 }
 
+//TODO: Check if files exist
 - (IBAction)save:(id)sender {
-	//
+	//Format the current date and time and save the file with the date as it's name
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"ddMMyyyyHHmmss"];
+	[[pdfView document] writeToURL:[[pathControl URL] URLByAppendingPathComponent:[NSString stringWithFormat:@"scan_%@.pdf", [dateFormatter stringFromDate:[NSDate date]]]]];
 }
 
 - (IBAction)reset:(id)sender {

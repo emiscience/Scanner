@@ -12,6 +12,7 @@
     IBOutlet NSPopUpButton *sizePopUpButton;
     IBOutlet NSSegmentedControl *orientationSegmentedControl;
     IBOutlet NSProgressIndicator *progressIndicator;
+    IBOutlet NSPathControl *pathControl;
 }
 
 @property (assign) IBOutlet NSWindow *window;

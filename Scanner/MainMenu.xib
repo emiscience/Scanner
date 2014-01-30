@@ -1366,7 +1366,7 @@
 													<reference key="NSNextResponder" ref="621299744"/>
 													<int key="NSvFlags">256</int>
 													<array class="NSMutableArray" key="NSSubviews">
-														<object class="NSProgressIndicator" id="263749986">
+														<object class="NSProgressIndicator" id="1025851631">
 															<reference key="NSNextResponder" ref="894316060"/>
 															<int key="NSvFlags">1314</int>
 															<object class="NSPSMatrix" key="NSDrawMatrix"/>
@@ -1396,7 +1396,7 @@
 													<string key="NSFrameSize">{699, 295}</string>
 													<reference key="NSSuperview" ref="621299744"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView" ref="263749986"/>
+													<reference key="NSNextKeyView" ref="1025851631"/>
 													<string key="NSClassName">NSView</string>
 												</object>
 												<object class="NSCustomView" id="553730911">
@@ -1912,9 +1912,17 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">progressIndicator</string>
 						<reference key="source" ref="246638972"/>
-						<reference key="destination" ref="263749986"/>
+						<reference key="destination" ref="1025851631"/>
 					</object>
 					<int key="connectionID">986</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">pathControl</string>
+						<reference key="source" ref="246638972"/>
+						<reference key="destination" ref="469632727"/>
+					</object>
+					<int key="connectionID">1014</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -2023,7 +2031,7 @@
 						<string key="label">enabled: selection.self</string>
 						<reference key="source" ref="115891343"/>
 						<reference key="destination" ref="702441657"/>
-						<object class="NSNibBindingConnector" key="connector">
+						<object class="NSNibBindingConnector" key="connector" id="838052658">
 							<reference key="NSSource" ref="115891343"/>
 							<reference key="NSDestination" ref="702441657"/>
 							<string key="NSLabel">enabled: selection.self</string>
@@ -2037,6 +2045,29 @@
 						</object>
 					</object>
 					<int key="connectionID">992</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled2: selection.hasOpenSession</string>
+						<reference key="source" ref="115891343"/>
+						<reference key="destination" ref="702441657"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="115891343"/>
+							<reference key="NSDestination" ref="702441657"/>
+							<string key="NSLabel">enabled2: selection.hasOpenSession</string>
+							<string key="NSBinding">enabled2</string>
+							<string key="NSKeyPath">selection.hasOpenSession</string>
+							<dictionary key="NSOptions">
+								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
+								<integer value="-1" key="NSNoSelectionPlaceholder"/>
+								<integer value="-1" key="NSNotApplicablePlaceholder"/>
+								<integer value="-1" key="NSNullPlaceholder"/>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="838052658"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1016</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -2161,10 +2192,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: selection.selectedFunctionalUnit.scanProgressPercentDone</string>
-						<reference key="source" ref="263749986"/>
+						<reference key="source" ref="1025851631"/>
 						<reference key="destination" ref="702441657"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="263749986"/>
+							<reference key="NSSource" ref="1025851631"/>
 							<reference key="NSDestination" ref="702441657"/>
 							<string key="NSLabel">value: selection.selectedFunctionalUnit.scanProgressPercentDone</string>
 							<string key="NSBinding">value</string>
@@ -2646,7 +2677,7 @@
 						<reference key="object" ref="894316060"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="268831851"/>
-							<reference ref="263749986"/>
+							<reference ref="1025851631"/>
 						</array>
 						<reference key="parent" ref="621299744"/>
 					</object>
@@ -3046,7 +3077,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">982</int>
-						<reference key="object" ref="263749986"/>
+						<reference key="object" ref="1025851631"/>
 						<reference key="parent" ref="894316060"/>
 					</object>
 				</array>
@@ -3190,7 +3221,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1013</int>
+			<int key="maxID">1016</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3260,6 +3291,7 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="kindSegmentedControl">NSSegmentedControl</string>
 						<string key="orientationSegmentedControl">NSSegmentedControl</string>
+						<string key="pathControl">NSPathControl</string>
 						<string key="pdfView">PDFView</string>
 						<string key="progressIndicator">NSProgressIndicator</string>
 						<string key="resolutionPopUpButton">NSPopUpButton</string>
@@ -3275,6 +3307,10 @@
 						<object class="IBToOneOutletInfo" key="orientationSegmentedControl">
 							<string key="name">orientationSegmentedControl</string>
 							<string key="candidateClassName">NSSegmentedControl</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="pathControl">
+							<string key="name">pathControl</string>
+							<string key="candidateClassName">NSPathControl</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="pdfView">
 							<string key="name">pdfView</string>
