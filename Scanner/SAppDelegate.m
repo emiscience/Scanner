@@ -142,22 +142,14 @@
 }
 
 - (IBAction)reset:(id)sender {
-	//
+	//Remove the document from the view
+	[pdfView setDocument:nil];
 }
 
 //MARK: - Class Variables
 - (ICScannerDevice *)selectedScanner {
     //Return the scanner that is currently selected in the popup
     return [[scannersController selectedObjects] objectAtIndex:0];
-}
-
-- (BOOL)scannerAvailable {    
-    //If there are no scanners available
-    if ([scanners count] == 0) {
-        return NO;
-    } else {
-        return YES;
-    }    
 }
 
 //???: Better way

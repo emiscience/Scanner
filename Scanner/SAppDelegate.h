@@ -22,7 +22,6 @@
 - (IBAction)reset:(id)sender;
 
 - (ICScannerDevice *)selectedScanner;
-- (BOOL)scannerAvailable;
 - (NSRect)scanArea;
 
 @end
