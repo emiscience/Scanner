@@ -17,6 +17,8 @@
 @property (assign) NSMutableArray *_scanners;
 
 - (IBAction)scan:(id)sender;
+- (IBAction)save:(id)sender;
+- (IBAction)reset:(id)sender;
 
 - (ICScannerDevice *)selectedScanner;
 - (BOOL)scannerAvailable;

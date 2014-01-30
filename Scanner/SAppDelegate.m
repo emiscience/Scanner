@@ -119,6 +119,14 @@
     }
 }
 
+- (IBAction)save:(id)sender {
+	//
+}
+
+- (IBAction)reset:(id)sender {
+	//
+}
+
 //MARK: - Class Variables
 - (ICScannerDevice *)selectedScanner {
     //Return the scanner that is currently selected in the popup
