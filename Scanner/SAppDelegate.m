@@ -68,8 +68,26 @@
     }
 }
 
+- (void)device:(ICDevice *)device didReceiveStatusInformation:(NSDictionary *)status {
+	//If the scanner starts warming up or else if the scanner finished warming up
+	if ([[status objectForKey:ICStatusNotificationKey] isEqualToString:ICScannerStatusWarmingUp]) {
+		//Show an indeterminate progress bar
+        [progressIndicator setDisplayedWhenStopped:YES];
+        [progressIndicator setIndeterminate:YES];
+        [progressIndicator startAnimation:nil];
+    } else if ([[status objectForKey:ICStatusNotificationKey] isEqualToString:ICScannerStatusWarmUpDone]) {
+		//Hide the indeterminate progress bar
+        [progressIndicator stopAnimation:nil];
+        [progressIndicator setIndeterminate:NO];
+        [progressIndicator setDisplayedWhenStopped:NO];
+    }
+}
+
 //???: Better way to redraw pdf view
 - (void)scannerDevice:(ICScannerDevice *)scanner didScanToURL:(NSURL *)url data:(NSData *)data {
+	//Hide the progress bar
+	[progressIndicator stopAnimation:nil];
+	
     //Create a pdf page from the data
     NSImage *image = [[NSImage alloc] initWithData:data];
     PDFPage *page = [[PDFPage alloc] initWithImage:image];
