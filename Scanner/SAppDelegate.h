@@ -5,6 +5,7 @@
 @interface SAppDelegate : NSObject <NSApplicationDelegate, ICDeviceBrowserDelegate, ICScannerDeviceDelegate, NSOutlineViewDelegate> {
     ICDeviceBrowser *deviceBrowser;
     NSMutableArray *scanners;
+    NSMutableArray *files;
     IBOutlet NSArrayController *scannersController;
     IBOutlet PDFView *pdfView;
     IBOutlet NSPopUpButton *resolutionPopUpButton;
