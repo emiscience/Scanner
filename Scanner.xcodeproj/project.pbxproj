@@ -15,7 +15,7 @@
 		128D91311896B361000EDC89 /* SAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 128D91301896B361000EDC89 /* SAppDelegate.m */; };
 		128D913B1896B647000EDC89 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D913A1896B647000EDC89 /* Quartz.framework */; };
 		128D913D1896B64F000EDC89 /* ImageCaptureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D913C1896B64F000EDC89 /* ImageCaptureCore.framework */; };
-		128F166F18999AC700C928A3 /* GenericScanner.icns in Resources */ = {isa = PBXBuildFile; fileRef = 128F166E18999AC700C928A3 /* GenericScanner.icns */; };
+		128F166F18999AC700C928A3 /* SAppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 128F166E18999AC700C928A3 /* SAppIcon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +34,7 @@
 		128D91301896B361000EDC89 /* SAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAppDelegate.m; sourceTree = "<group>"; usesTabs = 1; };
 		128D913A1896B647000EDC89 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		128D913C1896B64F000EDC89 /* ImageCaptureCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageCaptureCore.framework; path = System/Library/Frameworks/ImageCaptureCore.framework; sourceTree = SDKROOT; };
-		128F166E18999AC700C928A3 /* GenericScanner.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = GenericScanner.icns; sourceTree = "<group>"; };
+		128F166E18999AC700C928A3 /* SAppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SAppIcon.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +54,8 @@
 		128D910E1896B360000EDC89 = {
 			isa = PBXGroup;
 			children = (
-				128F166E18999AC700C928A3 /* GenericScanner.icns */,
 				128D91231896B361000EDC89 /* Scanner */,
+				1290A79F1899DDB2006185D5 /* Images */,
 				128D911C1896B361000EDC89 /* Frameworks */,
 				128D911A1896B361000EDC89 /* Products */,
 			);
@@ -113,6 +113,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1290A79F1899DDB2006185D5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				128F166E18999AC700C928A3 /* SAppIcon.icns */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,7 +175,7 @@
 				128D91281896B361000EDC89 /* InfoPlist.strings in Resources */,
 				128D912E1896B361000EDC89 /* Credits.rtf in Resources */,
 				1206360518995BC70007E758 /* MainMenu.xib in Resources */,
-				128F166F18999AC700C928A3 /* GenericScanner.icns in Resources */,
+				128F166F18999AC700C928A3 /* SAppIcon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

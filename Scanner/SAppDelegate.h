@@ -2,7 +2,7 @@
 #import <Quartz/Quartz.h>
 #import <ImageCaptureCore/ImageCaptureCore.h>
 
-@interface SAppDelegate : NSObject <NSApplicationDelegate, ICDeviceBrowserDelegate, ICScannerDeviceDelegate> {
+@interface SAppDelegate : NSObject <NSApplicationDelegate, ICDeviceBrowserDelegate, ICScannerDeviceDelegate, NSOutlineViewDelegate> {
     ICDeviceBrowser *deviceBrowser;
     NSMutableArray *scanners;
     IBOutlet NSArrayController *scannersController;

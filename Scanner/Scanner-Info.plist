@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>GenericScanner.icns</string>
+	<string>SAppIcon.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>Levi.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
