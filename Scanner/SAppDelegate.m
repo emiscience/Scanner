@@ -25,7 +25,7 @@
 - (void)deviceBrowser:(ICDeviceBrowser *)browser didAddDevice:(ICDevice *)device moreComing:(BOOL)moreComing {
     //If the device is a scanner
     if (([device type] & ICDeviceTypeMaskScanner) == ICDeviceTypeScanner) {
-        //Adding the device to the scanners array
+		//Adding the device to the scanners array
         [self willChangeValueForKey:@"_scanners"];
         [scanners addObject:device];
         [self didChangeValueForKey:@"_scanners"];

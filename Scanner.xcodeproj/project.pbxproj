@@ -31,7 +31,7 @@
 		128D912B1896B361000EDC89 /* Scanner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scanner-Prefix.pch"; sourceTree = "<group>"; };
 		128D912D1896B361000EDC89 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		128D912F1896B361000EDC89 /* SAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAppDelegate.h; sourceTree = "<group>"; };
-		128D91301896B361000EDC89 /* SAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAppDelegate.m; sourceTree = "<group>"; };
+		128D91301896B361000EDC89 /* SAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAppDelegate.m; sourceTree = "<group>"; usesTabs = 1; };
 		128D913A1896B647000EDC89 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		128D913C1896B64F000EDC89 /* ImageCaptureCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageCaptureCore.framework; path = System/Library/Frameworks/ImageCaptureCore.framework; sourceTree = SDKROOT; };
 		128F166E18999AC700C928A3 /* GenericScanner.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = GenericScanner.icns; sourceTree = "<group>"; };
