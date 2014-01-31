@@ -6,6 +6,7 @@
     ICDeviceBrowser *deviceBrowser;
     NSMutableArray *scanners;
     NSMutableArray *files;
+    NSDictionary *sizes;
     IBOutlet NSArrayController *scannersController;
     IBOutlet PDFView *pdfView;
     IBOutlet NSPopUpButton *resolutionPopUpButton;

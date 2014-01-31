@@ -8,6 +8,12 @@
 
 //MARK: - Application Delegate Methods	
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	//Making a dictionary with paper sizes
+	sizes = [[NSDictionary alloc] initWithObjectsAndKeys:[NSValue valueWithSize:NSMakeSize(21.0, 27.9)], @"A4",
+														 [NSValue valueWithSize:NSMakeSize(14.8, 21.0)], @"A5",
+														 [NSValue valueWithSize:NSMakeSize(10.5, 14.8)], @"A6",
+														 [NSValue valueWithSize:NSMakeSize(21.59, 27.94)], @"Letter", nil];
+	
     //Initializing and setting up the scanners array and arraycontroller
     scanners = [[NSMutableArray alloc] initWithCapacity:0];
     [scannersController setSelectsInsertedObjects:NO];
@@ -156,37 +162,20 @@
     return [[scannersController selectedObjects] objectAtIndex:0];
 }
 
-//???: Better way
 - (NSRect)scanArea {
-    //Get the variables from interface elements
-    NSInteger orientation = [orientationSegmentedControl selectedSegment]; //0=Portrait 1=Landscape
-    NSString *size = [[sizePopUpButton selectedItem] title];
-    CGFloat resolution = [[resolutionPopUpButton selectedItem] tag];
-    
-    //If the orientation is portrait or else if it is landscape
-    if (orientation == 0) {
-        //If the size is A4, A5, A6 or else if it is Letter
-        if ([size isEqualToString:@"A4"]) {
-            return NSMakeRect(0.0, 0.0, 8.27 * resolution, 11.69 * resolution);
-        } else if ([size isEqualToString:@"A5"]) {
-            return NSMakeRect(0.0, 0.0, 5.83 * resolution, 8.27 * resolution);
-        } else if ([size isEqualToString:@"A6"]) {
-            return NSMakeRect(0.0, 0.0, 4.13 * resolution, 5.83 * resolution);
-        } else {
-            return NSMakeRect(0.0, 0.0, 8.5 * resolution, 11.0 * resolution);
-        }
-    } else {
-        //If the size is A4, A5, A6 or else if it is Letter
-        if ([size isEqualToString:@"A4"]) {
-            return NSMakeRect(0.0, 0.0, 11.69 * resolution, 8.27 * resolution);
-        } else if ([size isEqualToString:@"A5"]) {
-            return NSMakeRect(0.0, 0.0, 8.27 * resolution, 5.83 * resolution);
-        } else if ([size isEqualToString:@"A6"]) {
-            return NSMakeRect(0.0, 0.0, 5.83 * resolution, 4.13 * resolution);
-        } else {
-            return NSMakeRect(0.0, 0.0, 11.0 * resolution, 8.5 * resolution);
-        }
-    }
+	//Transform metric size into pixel size depending on resolution selected
+    NSSize metricSize = [[sizes objectForKey:[[sizePopUpButton selectedItem] title]] sizeValue];
+	NSSize imperialSize = NSMakeSize(metricSize.width * 0.393700787, metricSize.height * 0.393700787);
+	NSSize pixelSize = NSMakeSize(imperialSize.width * [[resolutionPopUpButton selectedItem] tag], imperialSize.height * [[resolutionPopUpButton selectedItem] tag]);
+	
+	//Return the right size depending on the orientation selected
+	if ([orientationSegmentedControl selectedSegment] == 0) {
+		return NSMakeRect(0.0, 0.0, pixelSize.width, pixelSize.height);
+	} else if ([orientationSegmentedControl selectedSegment] == 1) {
+		return NSMakeRect(0.0, 0.0, pixelSize.height, pixelSize.width);
+	} else {
+		return NSMakeRect(0.0, 0.0, 0.0, 0.0);
+	}
 }
 
 @end
