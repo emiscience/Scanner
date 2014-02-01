@@ -110,7 +110,7 @@
         [document insertPage:page atIndex:0];
         [pdfView setDocument:document];
     }
-    
+	    
     //Force a redraw for the pdf view so the pages are shown properly
     [pdfView zoomIn:self];
     [pdfView setAutoScales:YES];
