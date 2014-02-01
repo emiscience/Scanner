@@ -136,8 +136,6 @@
         [unit setResolution:[[unit supportedResolutions] indexGreaterThanOrEqualToIndex:[[resolutionPopUpButton selectedItem] tag]]];
         [unit setBitDepth:ICScannerBitDepth8Bits];
 		[unit setMeasurementUnit:ICScannerMeasurementUnitCentimeters];
-		[unit setThresholdForBlackAndWhiteScanning:0];
-		[unit setUsesThresholdForBlackAndWhiteScanning:YES];
         [unit setPixelDataType:[kindSegmentedControl selectedSegment]];
         [scanner requestScan];
     } else {
@@ -148,10 +146,21 @@
 
 //TODO: Check if files exist
 - (IBAction)save:(id)sender {
-	//Format the current date and time and save the file with the date as it's name
+	//Format the current date and time
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:@"ddMMyyyyHHmmss"];
-	[[pdfView document] writeToURL:[[pathControl URL] URLByAppendingPathComponent:[NSString stringWithFormat:@"scan_%@.pdf", [dateFormatter stringFromDate:[NSDate date]]]]];
+	NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
+	
+	//Check if file exists and create filename
+	int number = 0;
+	NSString *fileName = [NSString stringWithFormat:@"scan_%@", dateString];
+	
+	while ([[NSFileManager defaultManager] fileExistsAtPath:[[[pathControl URL] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf", fileName]] path]]) {
+		number++;
+		fileName = [NSString stringWithFormat:@"scan_%@_%d", dateString, number];
+	}
+	
+	[[pdfView document] writeToURL:[[pathControl URL] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf", fileName]]];
 }
 
 - (IBAction)reset:(id)sender {
