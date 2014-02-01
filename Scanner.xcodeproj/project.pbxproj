@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1206360518995BC70007E758 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1206360418995BC70007E758 /* MainMenu.xib */; };
+		1206360518995BC70007E758 /* SMainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1206360418995BC70007E758 /* SMainMenu.xib */; };
 		128D911E1896B361000EDC89 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D911D1896B361000EDC89 /* Cocoa.framework */; };
-		128D91281896B361000EDC89 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 128D91261896B361000EDC89 /* InfoPlist.strings */; };
 		128D912A1896B361000EDC89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 128D91291896B361000EDC89 /* main.m */; };
 		128D912E1896B361000EDC89 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 128D912C1896B361000EDC89 /* Credits.rtf */; };
 		128D91311896B361000EDC89 /* SAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 128D91301896B361000EDC89 /* SAppDelegate.m */; };
@@ -19,16 +18,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1206360418995BC70007E758 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = Scanner/MainMenu.xib; sourceTree = "<group>"; };
+		1206360418995BC70007E758 /* SMainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SMainMenu.xib; path = Scanner/SMainMenu.xib; sourceTree = "<group>"; };
 		128D91191896B361000EDC89 /* Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128D911D1896B361000EDC89 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		128D91201896B361000EDC89 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		128D91211896B361000EDC89 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		128D91221896B361000EDC89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		128D91251896B361000EDC89 /* Scanner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Scanner-Info.plist"; path = "Scanner/Scanner-Info.plist"; sourceTree = "<group>"; };
-		128D91271896B361000EDC89 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		128D91251896B361000EDC89 /* SInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = SInfo.plist; path = Scanner/SInfo.plist; sourceTree = "<group>"; };
 		128D91291896B361000EDC89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Scanner/main.m; sourceTree = "<group>"; };
-		128D912B1896B361000EDC89 /* Scanner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Scanner-Prefix.pch"; path = "Scanner/Scanner-Prefix.pch"; sourceTree = "<group>"; };
+		128D912B1896B361000EDC89 /* SPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPrefix.pch; path = Scanner/SPrefix.pch; sourceTree = "<group>"; };
 		128D912D1896B361000EDC89 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		128D912F1896B361000EDC89 /* SAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SAppDelegate.h; path = Scanner/SAppDelegate.h; sourceTree = "<group>"; };
 		128D91301896B361000EDC89 /* SAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SAppDelegate.m; path = Scanner/SAppDelegate.m; sourceTree = "<group>"; usesTabs = 1; };
@@ -114,7 +112,7 @@
 		12D15D9C189C43A000F7EDCA /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				1206360418995BC70007E758 /* MainMenu.xib */,
+				1206360418995BC70007E758 /* SMainMenu.xib */,
 			);
 			name = Interfaces;
 			path = ..;
@@ -123,10 +121,9 @@
 		12D15D9D189C43B000F7EDCA /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				128D91251896B361000EDC89 /* Scanner-Info.plist */,
-				128D91261896B361000EDC89 /* InfoPlist.strings */,
+				128D91251896B361000EDC89 /* SInfo.plist */,
 				128D91291896B361000EDC89 /* main.m */,
-				128D912B1896B361000EDC89 /* Scanner-Prefix.pch */,
+				128D912B1896B361000EDC89 /* SPrefix.pch */,
 				128D912C1896B361000EDC89 /* Credits.rtf */,
 			);
 			name = Support;
@@ -192,9 +189,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				128D91281896B361000EDC89 /* InfoPlist.strings in Resources */,
 				128D912E1896B361000EDC89 /* Credits.rtf in Resources */,
-				1206360518995BC70007E758 /* MainMenu.xib in Resources */,
+				1206360518995BC70007E758 /* SMainMenu.xib in Resources */,
 				128F166F18999AC700C928A3 /* SAppIcon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,15 +210,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		128D91261896B361000EDC89 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				128D91271896B361000EDC89 /* en */,
-			);
-			name = InfoPlist.strings;
-			path = Scanner;
-			sourceTree = "<group>";
-		};
 		128D912C1896B361000EDC89 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,8 +271,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Scanner/Scanner-Prefix.pch";
-				INFOPLIST_FILE = "Scanner/Scanner-Info.plist";
+				GCC_PREFIX_HEADER = Scanner/SPrefix.pch;
+				INFOPLIST_FILE = Scanner/SInfo.plist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -295,8 +282,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Scanner/Scanner-Prefix.pch";
-				INFOPLIST_FILE = "Scanner/Scanner-Info.plist";
+				GCC_PREFIX_HEADER = Scanner/SPrefix.pch;
+				INFOPLIST_FILE = Scanner/SInfo.plist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

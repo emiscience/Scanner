@@ -154,11 +154,13 @@
 	int number = 0;
 	NSString *fileName = [NSString stringWithFormat:@"scan_%@", dateString];
 	
+	//While the filename exists increase the number
 	while ([[NSFileManager defaultManager] fileExistsAtPath:[[[pathControl URL] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf", fileName]] path]]) {
 		number++;
 		fileName = [NSString stringWithFormat:@"scan_%@_%d", dateString, number];
 	}
 	
+	//Save the file to desired directory
 	[[pdfView document] writeToURL:[[pathControl URL] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf", fileName]]];
 }
 
