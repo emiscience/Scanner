@@ -144,7 +144,6 @@
     }
 }
 
-//TODO: Check if files exist
 - (IBAction)save:(id)sender {
 	//Format the current date and time
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
