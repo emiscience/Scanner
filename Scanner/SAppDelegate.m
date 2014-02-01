@@ -122,6 +122,12 @@
     }
 }
 
+- (void)device:(ICDevice *)device didEncounterError:(NSError *)error {
+	if ([error isNotEqualTo:nil]) {
+		NSLog(@"%@", error);
+	}
+}
+
 //MARK: - Interface Builder Actions
 //FIXME: Black and white not working
 - (IBAction)scan:(id)sender {
