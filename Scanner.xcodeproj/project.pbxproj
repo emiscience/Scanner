@@ -15,6 +15,7 @@
 		128D913B1896B647000EDC89 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D913A1896B647000EDC89 /* Quartz.framework */; };
 		128D913D1896B64F000EDC89 /* ImageCaptureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D913C1896B64F000EDC89 /* ImageCaptureCore.framework */; };
 		128F166F18999AC700C928A3 /* SAppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 128F166E18999AC700C928A3 /* SAppIcon.icns */; };
+		12EB285D189D9E8B00F6019B /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 12EB285C189D9E8B00F6019B /* README.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		128D913A1896B647000EDC89 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		128D913C1896B64F000EDC89 /* ImageCaptureCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageCaptureCore.framework; path = System/Library/Frameworks/ImageCaptureCore.framework; sourceTree = SDKROOT; };
 		128F166E18999AC700C928A3 /* SAppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SAppIcon.icns; sourceTree = "<group>"; };
+		12EB285C189D9E8B00F6019B /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				128D91291896B361000EDC89 /* main.m */,
 				128D912B1896B361000EDC89 /* SPrefix.pch */,
 				128D912C1896B361000EDC89 /* Credits.rtf */,
+				12EB285C189D9E8B00F6019B /* README.rtf */,
 			);
 			name = Support;
 			path = ..;
@@ -192,6 +195,7 @@
 				128D912E1896B361000EDC89 /* Credits.rtf in Resources */,
 				1206360518995BC70007E758 /* SMainMenu.xib in Resources */,
 				128F166F18999AC700C928A3 /* SAppIcon.icns in Resources */,
+				12EB285D189D9E8B00F6019B /* README.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
