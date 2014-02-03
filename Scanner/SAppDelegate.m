@@ -141,7 +141,6 @@
         [unit setScanArea:[self scanArea]];
         [unit setResolution:[[unit supportedResolutions] indexGreaterThanOrEqualToIndex:[[resolutionPopUpButton selectedItem] tag]]];
         [unit setBitDepth:ICScannerBitDepth8Bits];
-		[unit setMeasurementUnit:ICScannerMeasurementUnitCentimeters];
         [unit setPixelDataType:[kindSegmentedControl selectedSegment]];
         [scanner requestScan];
     } else {
