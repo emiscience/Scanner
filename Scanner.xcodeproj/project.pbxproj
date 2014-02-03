@@ -10,7 +10,6 @@
 		1206360518995BC70007E758 /* SMainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1206360418995BC70007E758 /* SMainMenu.xib */; };
 		128D911E1896B361000EDC89 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D911D1896B361000EDC89 /* Cocoa.framework */; };
 		128D912A1896B361000EDC89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 128D91291896B361000EDC89 /* main.m */; };
-		128D912E1896B361000EDC89 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 128D912C1896B361000EDC89 /* Credits.rtf */; };
 		128D91311896B361000EDC89 /* SAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 128D91301896B361000EDC89 /* SAppDelegate.m */; };
 		128D913B1896B647000EDC89 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D913A1896B647000EDC89 /* Quartz.framework */; };
 		128D913D1896B64F000EDC89 /* ImageCaptureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D913C1896B64F000EDC89 /* ImageCaptureCore.framework */; };
@@ -27,7 +26,6 @@
 		128D91251896B361000EDC89 /* SInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = SInfo.plist; path = Scanner/SInfo.plist; sourceTree = "<group>"; };
 		128D91291896B361000EDC89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Scanner/main.m; sourceTree = "<group>"; };
 		128D912B1896B361000EDC89 /* SPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPrefix.pch; path = Scanner/SPrefix.pch; sourceTree = "<group>"; };
-		128D912D1896B361000EDC89 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		128D912F1896B361000EDC89 /* SAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SAppDelegate.h; path = Scanner/SAppDelegate.h; sourceTree = "<group>"; };
 		128D91301896B361000EDC89 /* SAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SAppDelegate.m; path = Scanner/SAppDelegate.m; sourceTree = "<group>"; usesTabs = 1; };
 		128D913A1896B647000EDC89 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
@@ -124,7 +122,6 @@
 				128D91251896B361000EDC89 /* SInfo.plist */,
 				128D91291896B361000EDC89 /* main.m */,
 				128D912B1896B361000EDC89 /* SPrefix.pch */,
-				128D912C1896B361000EDC89 /* Credits.rtf */,
 			);
 			name = Support;
 			path = ..;
@@ -190,7 +187,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				128D912E1896B361000EDC89 /* Credits.rtf in Resources */,
 				1206360518995BC70007E758 /* SMainMenu.xib in Resources */,
 				128F166F18999AC700C928A3 /* SAppIcon.icns in Resources */,
 			);
@@ -211,7 +207,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash    \nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((bN += 1)) \nbN=$(printf \"%d\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"";
+			shellScript = "#!/bin/bash    \nbn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbn=$((bn += 1)) \nbn=$(printf \"%d\" $bn)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bn\" \"$INFOPLIST_FILE\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -226,18 +222,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		128D912C1896B361000EDC89 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				128D912D1896B361000EDC89 /* en */,
-			);
-			name = Credits.rtf;
-			path = Scanner;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		128D91351896B362000EDC89 /* Debug */ = {

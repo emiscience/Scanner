@@ -15,6 +15,8 @@
     IBOutlet NSSegmentedControl *orientationSegmentedControl;
     IBOutlet NSProgressIndicator *progressIndicator;
     IBOutlet NSPathControl *pathControl;
+    IBOutlet NSMenu *sizesMenu;
+    IBOutlet NSMenu *resolutionsMenu;
 }
 
 @property (assign) IBOutlet NSWindow *window;
