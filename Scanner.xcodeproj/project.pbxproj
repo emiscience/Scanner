@@ -30,7 +30,7 @@
 		128D91301896B361000EDC89 /* SAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SAppDelegate.m; path = Scanner/SAppDelegate.m; sourceTree = "<group>"; usesTabs = 1; };
 		128D913A1896B647000EDC89 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		128D913C1896B64F000EDC89 /* ImageCaptureCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageCaptureCore.framework; path = System/Library/Frameworks/ImageCaptureCore.framework; sourceTree = SDKROOT; };
-		128F166E18999AC700C928A3 /* SAppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SAppIcon.icns; sourceTree = "<group>"; };
+		128F166E18999AC700C928A3 /* SAppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = SAppIcon.icns; path = Scanner/SAppIcon.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

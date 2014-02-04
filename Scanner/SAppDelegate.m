@@ -158,7 +158,7 @@
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:@"ddMMyyyyHHmmss"];
 	NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
-	
+		
 	//Check if file exists and create filename
 	int number = 0;
 	NSString *fileName = [NSString stringWithFormat:@"scan_%@", dateString];
