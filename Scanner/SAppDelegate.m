@@ -3,8 +3,8 @@
 @implementation SAppDelegate
 
 //MARK: - Synthesize Properties
-@synthesize window = _window;
-@synthesize _scanners = scanners;
+@synthesize window;
+@synthesize scanners;
 
 //MARK: - Application Delegate Methods	
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -36,9 +36,9 @@
     //If the device is a scanner
     if (([device type] & ICDeviceTypeMaskScanner) == ICDeviceTypeScanner) {
 		//Adding the device to the scanners array
-        [self willChangeValueForKey:@"_scanners"];
+        [self willChangeValueForKey:@"scanners"];
         [scanners addObject:device];
-        [self didChangeValueForKey:@"_scanners"];
+        [self didChangeValueForKey:@"scanners"];
         
         //Setting up the device
         [device setDelegate:self];
@@ -51,17 +51,17 @@
 
 - (void)deviceBrowser:(ICDeviceBrowser *)browser didRemoveDevice:(ICDevice *)device moreGoing:(BOOL)moreGoing {
     //Remove the device from the scanners array
-    [self willChangeValueForKey:@"_scanners"];
+    [self willChangeValueForKey:@"scanners"];
     [scanners removeObject:device];
-    [self didChangeValueForKey:@"_scanners"];
+    [self didChangeValueForKey:@"scanners"];
     [device requestCloseSession];
 }
 
 - (void)didRemoveDevice:(ICDevice *)device {
     //Remove the device from the scanners array
-    [self willChangeValueForKey:@"_scanners"];
+    [self willChangeValueForKey:@"scanners"];
     [scanners removeObject:device];
-    [self didChangeValueForKey:@"_scanners"];
+    [self didChangeValueForKey:@"scanners"];
     [device requestCloseSession];
 }
 

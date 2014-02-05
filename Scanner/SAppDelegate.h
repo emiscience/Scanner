@@ -4,7 +4,6 @@
 
 @interface SAppDelegate : NSObject <NSApplicationDelegate, ICDeviceBrowserDelegate, ICScannerDeviceDelegate, NSOutlineViewDelegate> {
     ICDeviceBrowser *deviceBrowser;
-    NSMutableArray *scanners;
     NSMutableArray *files;
     NSDictionary *sizes;
     IBOutlet NSArrayController *scannersController;
@@ -20,7 +19,7 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
-@property (assign) NSMutableArray *_scanners;
+@property (assign) NSMutableArray *scanners;
 
 - (IBAction)scan:(id)sender;
 - (IBAction)save:(id)sender;
