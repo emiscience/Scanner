@@ -5,14 +5,17 @@
 //MARK: - Synthesize Properties
 @synthesize window;
 @synthesize scanners;
+@synthesize sizes;
 
 //MARK: - Application Delegate Methods	
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	//Making a dictionary with paper sizes
-	sizes = [[NSDictionary alloc] initWithObjectsAndKeys:[NSValue valueWithSize:NSMakeSize(21.0, 27.9)], @"A4",
+	[self willChangeValueForKey:@"sizes"];
+	sizes = [[NSMutableDictionary alloc] initWithObjectsAndKeys:[NSValue valueWithSize:NSMakeSize(21.0, 27.9)], @"A4",
 														 [NSValue valueWithSize:NSMakeSize(14.8, 21.0)], @"A5",
 														 [NSValue valueWithSize:NSMakeSize(10.5, 14.8)], @"A6",
 														 [NSValue valueWithSize:NSMakeSize(21.59, 27.94)], @"Letter", nil];
+	[self didChangeValueForKey:@"sizes"];
 	
     //Initializing and setting up the scanners array and arraycontroller
     scanners = [[NSMutableArray alloc] initWithCapacity:0];
@@ -25,6 +28,10 @@
                                             ICDeviceLocationTypeMaskLocal|
                                             ICDeviceLocationTypeMaskRemote];
     [deviceBrowser start];
+}
+
+- (void)applicationWillTerminate:(NSNotification *)notification {
+	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 //MARK: - Device Browser Delegate Methods
@@ -93,6 +100,8 @@
 - (void)scannerDevice:(ICScannerDevice *)scanner didScanToURL:(NSURL *)url data:(NSData *)data {
 	//Hide the progress bar
 	[progressIndicator stopAnimation:nil];
+	[scanButton setEnabled:NO];
+	[scanButton setTitle:@"Scan"];
 	
     //Create a pdf page from the data
     NSImage *image = [[NSImage alloc] initWithData:data];
@@ -116,6 +125,10 @@
     [pdfView setAutoScales:YES];
 }
 
+- (void)scannerDevice:(ICScannerDevice *)scanner didCompleteScanWithError:(NSError *)error {
+	[scanButton setEnabled:YES];
+}
+
 - (void)device:(ICDevice *)device didCloseSessionWithError:(NSError *)error {
     if ([error isNotEqualTo:nil]) {
         NSLog(@"%@", error);
@@ -137,12 +150,15 @@
     //If there is no scan or overviewscan in progress
     if (![unit overviewScanInProgress] && ![unit scanInProgress]) {
         //Setup the functional unit and start the scan
+		[unit setMeasurementUnit:ICScannerMeasurementUnitCentimeters];
+		[unit setUsesThresholdForBlackAndWhiteScanning:[[NSUserDefaults standardUserDefaults] boolForKey:@"usesMonochromeThreshold"]];
+		[unit setThresholdForBlackAndWhiteScanning:[[NSUserDefaults standardUserDefaults] doubleForKey:@"monochromeThreshold"]];
         [unit setScanArea:[self scanArea]];
         [unit setResolution:[[unit supportedResolutions] indexGreaterThanOrEqualToIndex:[[resolutionPopUpButton selectedItem] tag]]];
-        [unit setBitDepth:ICScannerBitDepth1Bit];
-        [unit setPixelDataType:[kindSegmentedControl selectedSegment]];
-		if ([kindSegmentedControl selectedSegment] == 0) [unit setBitDepth:ICScannerBitDepth1Bit]; else [unit setBitDepth:ICScannerBitDepth8Bits];
-        [scanner requestScan];
+        [unit setPixelDataType:[[NSUserDefaults standardUserDefaults] integerForKey:@"kind"]];
+		if ([[NSUserDefaults standardUserDefaults] integerForKey:@"kind"] == 0) [unit setBitDepth:ICScannerBitDepth1Bit]; else [unit setBitDepth:ICScannerBitDepth8Bits];
+		[scanner requestScan];
+		[scanButton setTitle:@"Cancel"];
     } else {
         //Cancel the ongoing scan
         [scanner cancelScan];

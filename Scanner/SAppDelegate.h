@@ -4,8 +4,6 @@
 
 @interface SAppDelegate : NSObject <NSApplicationDelegate, ICDeviceBrowserDelegate, ICScannerDeviceDelegate> {
     ICDeviceBrowser *deviceBrowser;
-    NSMutableArray *files;
-    NSDictionary *sizes;
     IBOutlet NSArrayController *scannersController;
     IBOutlet PDFView *pdfView;
     IBOutlet NSPopUpButton *resolutionPopUpButton;
@@ -14,10 +12,12 @@
     IBOutlet NSSegmentedControl *orientationSegmentedControl;
     IBOutlet NSProgressIndicator *progressIndicator;
     IBOutlet NSPathControl *pathControl;
+    IBOutlet NSButton *scanButton;
 }
 
 @property (atomic, assign) IBOutlet NSWindow *window;
 @property (nonatomic, retain) NSMutableArray *scanners;
+@property (nonatomic, retain) NSMutableDictionary *sizes;
 
 - (IBAction)scan:(id)sender;
 - (IBAction)save:(id)sender;
