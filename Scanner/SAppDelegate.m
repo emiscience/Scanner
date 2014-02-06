@@ -8,10 +8,6 @@
 
 //MARK: - Application Delegate Methods	
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	//Filling the size and resolution popup buttons
-	[sizePopUpButton setMenu:sizesMenu];
-	[resolutionPopUpButton setMenu:resolutionsMenu];
-	
 	//Making a dictionary with paper sizes
 	sizes = [[NSDictionary alloc] initWithObjectsAndKeys:[NSValue valueWithSize:NSMakeSize(21.0, 27.9)], @"A4",
 														 [NSValue valueWithSize:NSMakeSize(14.8, 21.0)], @"A5",
@@ -184,6 +180,7 @@
     return [[scannersController selectedObjects] objectAtIndex:0];
 }
 
+//TODO: Finetune paper sizes
 - (NSRect)scanArea {
 	//Transform metric size into pixel size depending on resolution selected
     NSSize metricSize = [[sizes objectForKey:[[sizePopUpButton selectedItem] title]] sizeValue];

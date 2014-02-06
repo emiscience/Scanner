@@ -14,6 +14,11 @@
 		128D913B1896B647000EDC89 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D913A1896B647000EDC89 /* Quartz.framework */; };
 		128D913D1896B64F000EDC89 /* ImageCaptureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D913C1896B64F000EDC89 /* ImageCaptureCore.framework */; };
 		128F166F18999AC700C928A3 /* SAppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 128F166E18999AC700C928A3 /* SAppIcon.icns */; };
+		12998F4D18A3B4DE00A5E253 /* SOrientationLandscapeTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 12998F4B18A3B4DE00A5E253 /* SOrientationLandscapeTemplate.pdf */; };
+		12998F4E18A3B4DE00A5E253 /* SOrientationPortraitTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 12998F4C18A3B4DE00A5E253 /* SOrientationPortraitTemplate.pdf */; };
+		12998F5318A3BA0F00A5E253 /* SKindGrayTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 12998F5018A3BA0F00A5E253 /* SKindGrayTemplate.pdf */; };
+		12998F5418A3BA0F00A5E253 /* SKindRGBTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 12998F5118A3BA0F00A5E253 /* SKindRGBTemplate.pdf */; };
+		12998F5518A3BA0F00A5E253 /* SKindBWTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 12998F5218A3BA0F00A5E253 /* SKindBWTemplate.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 		128D913A1896B647000EDC89 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		128D913C1896B64F000EDC89 /* ImageCaptureCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageCaptureCore.framework; path = System/Library/Frameworks/ImageCaptureCore.framework; sourceTree = SDKROOT; };
 		128F166E18999AC700C928A3 /* SAppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = SAppIcon.icns; path = Scanner/SAppIcon.icns; sourceTree = "<group>"; };
+		12998F4B18A3B4DE00A5E253 /* SOrientationLandscapeTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = SOrientationLandscapeTemplate.pdf; sourceTree = "<group>"; };
+		12998F4C18A3B4DE00A5E253 /* SOrientationPortraitTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = SOrientationPortraitTemplate.pdf; sourceTree = "<group>"; };
+		12998F5018A3BA0F00A5E253 /* SKindGrayTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = SKindGrayTemplate.pdf; sourceTree = "<group>"; };
+		12998F5118A3BA0F00A5E253 /* SKindRGBTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = SKindRGBTemplate.pdf; sourceTree = "<group>"; };
+		12998F5218A3BA0F00A5E253 /* SKindBWTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = SKindBWTemplate.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +141,11 @@
 			isa = PBXGroup;
 			children = (
 				128F166E18999AC700C928A3 /* SAppIcon.icns */,
+				12998F4B18A3B4DE00A5E253 /* SOrientationLandscapeTemplate.pdf */,
+				12998F4C18A3B4DE00A5E253 /* SOrientationPortraitTemplate.pdf */,
+				12998F5018A3BA0F00A5E253 /* SKindGrayTemplate.pdf */,
+				12998F5118A3BA0F00A5E253 /* SKindRGBTemplate.pdf */,
+				12998F5218A3BA0F00A5E253 /* SKindBWTemplate.pdf */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -189,6 +204,11 @@
 			files = (
 				1206360518995BC70007E758 /* SMainMenu.xib in Resources */,
 				128F166F18999AC700C928A3 /* SAppIcon.icns in Resources */,
+				12998F4D18A3B4DE00A5E253 /* SOrientationLandscapeTemplate.pdf in Resources */,
+				12998F4E18A3B4DE00A5E253 /* SOrientationPortraitTemplate.pdf in Resources */,
+				12998F5318A3BA0F00A5E253 /* SKindGrayTemplate.pdf in Resources */,
+				12998F5418A3BA0F00A5E253 /* SKindRGBTemplate.pdf in Resources */,
+				12998F5518A3BA0F00A5E253 /* SKindBWTemplate.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
