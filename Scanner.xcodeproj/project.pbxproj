@@ -10,7 +10,6 @@
 		1206360518995BC70007E758 /* SMainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1206360418995BC70007E758 /* SMainMenu.xib */; };
 		128D911E1896B361000EDC89 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D911D1896B361000EDC89 /* Cocoa.framework */; };
 		128D912A1896B361000EDC89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 128D91291896B361000EDC89 /* main.m */; };
-		128D91311896B361000EDC89 /* SAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 128D91301896B361000EDC89 /* SAppDelegate.m */; };
 		128D913B1896B647000EDC89 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D913A1896B647000EDC89 /* Quartz.framework */; };
 		128D913D1896B64F000EDC89 /* ImageCaptureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D913C1896B64F000EDC89 /* ImageCaptureCore.framework */; };
 		128F166F18999AC700C928A3 /* SAppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 128F166E18999AC700C928A3 /* SAppIcon.icns */; };
@@ -19,6 +18,8 @@
 		12998F5318A3BA0F00A5E253 /* SKindGrayTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 12998F5018A3BA0F00A5E253 /* SKindGrayTemplate.pdf */; };
 		12998F5418A3BA0F00A5E253 /* SKindRGBTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 12998F5118A3BA0F00A5E253 /* SKindRGBTemplate.pdf */; };
 		12998F5518A3BA0F00A5E253 /* SKindBWTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 12998F5218A3BA0F00A5E253 /* SKindBWTemplate.pdf */; };
+		12C37F7E18A41ABB00044933 /* SAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C37F7F18A41ABB00044933 /* SAppDelegate.m */; };
+		12C37F8018A41AC900044933 /* SScannerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C37F8118A41AC900044933 /* SScannerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +32,6 @@
 		128D91251896B361000EDC89 /* SInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = SInfo.plist; path = Scanner/SInfo.plist; sourceTree = "<group>"; };
 		128D91291896B361000EDC89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Scanner/main.m; sourceTree = "<group>"; };
 		128D912B1896B361000EDC89 /* SPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPrefix.pch; path = Scanner/SPrefix.pch; sourceTree = "<group>"; };
-		128D912F1896B361000EDC89 /* SAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SAppDelegate.h; path = Scanner/SAppDelegate.h; sourceTree = "<group>"; };
-		128D91301896B361000EDC89 /* SAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SAppDelegate.m; path = Scanner/SAppDelegate.m; sourceTree = "<group>"; usesTabs = 1; };
 		128D913A1896B647000EDC89 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		128D913C1896B64F000EDC89 /* ImageCaptureCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageCaptureCore.framework; path = System/Library/Frameworks/ImageCaptureCore.framework; sourceTree = SDKROOT; };
 		128F166E18999AC700C928A3 /* SAppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = SAppIcon.icns; path = Scanner/SAppIcon.icns; sourceTree = "<group>"; };
@@ -41,6 +40,10 @@
 		12998F5018A3BA0F00A5E253 /* SKindGrayTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = SKindGrayTemplate.pdf; sourceTree = "<group>"; };
 		12998F5118A3BA0F00A5E253 /* SKindRGBTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = SKindRGBTemplate.pdf; sourceTree = "<group>"; };
 		12998F5218A3BA0F00A5E253 /* SKindBWTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = SKindBWTemplate.pdf; sourceTree = "<group>"; };
+		12C37F7118A40EF500044933 /* SScannerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SScannerController.h; sourceTree = "<group>"; };
+		12C37F7D18A41AB400044933 /* SAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SAppDelegate.h; path = Scanner/SAppDelegate.h; sourceTree = "<group>"; };
+		12C37F7F18A41ABB00044933 /* SAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SAppDelegate.m; path = Scanner/SAppDelegate.m; sourceTree = "<group>"; };
+		12C37F8118A41AC900044933 /* SScannerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SScannerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +113,10 @@
 		12D15D9B189C438800F7EDCA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				128D912F1896B361000EDC89 /* SAppDelegate.h */,
-				128D91301896B361000EDC89 /* SAppDelegate.m */,
+				12C37F7D18A41AB400044933 /* SAppDelegate.h */,
+				12C37F7F18A41ABB00044933 /* SAppDelegate.m */,
+				12C37F7118A40EF500044933 /* SScannerController.h */,
+				12C37F8118A41AC900044933 /* SScannerController.m */,
 			);
 			name = Sources;
 			path = ..;
@@ -237,7 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				128D912A1896B361000EDC89 /* main.m in Sources */,
-				128D91311896B361000EDC89 /* SAppDelegate.m in Sources */,
+				12C37F7E18A41ABB00044933 /* SAppDelegate.m in Sources */,
+				12C37F8018A41AC900044933 /* SScannerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
