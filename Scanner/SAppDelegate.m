@@ -133,7 +133,6 @@
 }
 
 //MARK: - Interface Builder Actions
-//FIXME: Black and white not working
 - (IBAction)scan:(id)sender {
     //Get the selected scanner and it's functional unit
     ICScannerDevice *scanner = [self selectedScanner];
@@ -144,8 +143,9 @@
         //Setup the functional unit and start the scan
         [unit setScanArea:[self scanArea]];
         [unit setResolution:[[unit supportedResolutions] indexGreaterThanOrEqualToIndex:[[resolutionPopUpButton selectedItem] tag]]];
-        [unit setBitDepth:ICScannerBitDepth8Bits];
+        [unit setBitDepth:ICScannerBitDepth1Bit];
         [unit setPixelDataType:[kindSegmentedControl selectedSegment]];
+		if ([kindSegmentedControl selectedSegment] == 0) [unit setBitDepth:ICScannerBitDepth1Bit]; else [unit setBitDepth:ICScannerBitDepth8Bits];
         [scanner requestScan];
     } else {
         //Cancel the ongoing scan

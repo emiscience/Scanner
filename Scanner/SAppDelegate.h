@@ -2,7 +2,7 @@
 #import <Quartz/Quartz.h>
 #import <ImageCaptureCore/ImageCaptureCore.h>
 
-@interface SAppDelegate : NSObject <NSApplicationDelegate, ICDeviceBrowserDelegate, ICScannerDeviceDelegate, NSOutlineViewDelegate> {
+@interface SAppDelegate : NSObject <NSApplicationDelegate, ICDeviceBrowserDelegate, ICScannerDeviceDelegate> {
     ICDeviceBrowser *deviceBrowser;
     NSMutableArray *files;
     NSDictionary *sizes;
@@ -18,8 +18,8 @@
     IBOutlet NSMenu *resolutionsMenu;
 }
 
-@property (assign) IBOutlet NSWindow *window;
-@property (assign) NSMutableArray *scanners;
+@property (atomic, assign) IBOutlet NSWindow *window;
+@property (nonatomic, retain) NSMutableArray *scanners;
 
 - (IBAction)scan:(id)sender;
 - (IBAction)save:(id)sender;
