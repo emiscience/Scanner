@@ -3,7 +3,7 @@
 @implementation SAppDelegate
 
 //MARK: - Synthesize Properties
-@synthesize window;
+@synthesize window = _window;
 
 //MARK: - Application Delegate Methods
 //TODO: Set users defaults if not set

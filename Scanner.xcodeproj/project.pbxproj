@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1206360518995BC70007E758 /* SMainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1206360418995BC70007E758 /* SMainMenu.xib */; };
-		12612F1018A5A79F004BB871 /* SPaperSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 12612F0F18A5A79F004BB871 /* SPaperSize.m */; };
 		128D911E1896B361000EDC89 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D911D1896B361000EDC89 /* Cocoa.framework */; };
 		128D912A1896B361000EDC89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 128D91291896B361000EDC89 /* main.m */; };
 		128D913B1896B647000EDC89 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D913A1896B647000EDC89 /* Quartz.framework */; };
 		128D913D1896B64F000EDC89 /* ImageCaptureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D913C1896B64F000EDC89 /* ImageCaptureCore.framework */; };
 		128F166F18999AC700C928A3 /* SAppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 128F166E18999AC700C928A3 /* SAppIcon.icns */; };
+		1294E6E918A6B24000FC7F8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D91221896B361000EDC89 /* Foundation.framework */; };
+		1294E6EA18A6B25200FC7F8A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D91201896B361000EDC89 /* AppKit.framework */; };
 		12998F4D18A3B4DE00A5E253 /* SOrientationLandscapeTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 12998F4B18A3B4DE00A5E253 /* SOrientationLandscapeTemplate.pdf */; };
 		12998F4E18A3B4DE00A5E253 /* SOrientationPortraitTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 12998F4C18A3B4DE00A5E253 /* SOrientationPortraitTemplate.pdf */; };
 		12998F5318A3BA0F00A5E253 /* SKindGrayTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 12998F5018A3BA0F00A5E253 /* SKindGrayTemplate.pdf */; };
@@ -25,12 +26,9 @@
 
 /* Begin PBXFileReference section */
 		1206360418995BC70007E758 /* SMainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SMainMenu.xib; path = Scanner/SMainMenu.xib; sourceTree = "<group>"; };
-		12612F0E18A5A79F004BB871 /* SPaperSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPaperSize.h; sourceTree = "<group>"; };
-		12612F0F18A5A79F004BB871 /* SPaperSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPaperSize.m; sourceTree = "<group>"; };
 		128D91191896B361000EDC89 /* Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128D911D1896B361000EDC89 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		128D91201896B361000EDC89 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		128D91211896B361000EDC89 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		128D91221896B361000EDC89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		128D91251896B361000EDC89 /* SInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = SInfo.plist; path = Scanner/SInfo.plist; sourceTree = "<group>"; };
 		128D91291896B361000EDC89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Scanner/main.m; sourceTree = "<group>"; };
@@ -54,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1294E6EA18A6B25200FC7F8A /* AppKit.framework in Frameworks */,
+				1294E6E918A6B24000FC7F8A /* Foundation.framework in Frameworks */,
 				128D913D1896B64F000EDC89 /* ImageCaptureCore.framework in Frameworks */,
 				128D913B1896B647000EDC89 /* Quartz.framework in Frameworks */,
 				128D911E1896B361000EDC89 /* Cocoa.framework in Frameworks */,
@@ -84,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				128D91201896B361000EDC89 /* AppKit.framework */,
-				128D91211896B361000EDC89 /* CoreData.framework */,
 				128D91221896B361000EDC89 /* Foundation.framework */,
 				128D913C1896B64F000EDC89 /* ImageCaptureCore.framework */,
 				128D913A1896B647000EDC89 /* Quartz.framework */,
@@ -120,8 +119,6 @@
 				12C37F7F18A41ABB00044933 /* SAppDelegate.m */,
 				12C37F7118A40EF500044933 /* SScannerController.h */,
 				12C37F8118A41AC900044933 /* SScannerController.m */,
-				12612F0E18A5A79F004BB871 /* SPaperSize.h */,
-				12612F0F18A5A79F004BB871 /* SPaperSize.m */,
 			);
 			name = Sources;
 			path = ..;
@@ -249,7 +246,6 @@
 				128D912A1896B361000EDC89 /* main.m in Sources */,
 				12C37F7E18A41ABB00044933 /* SAppDelegate.m in Sources */,
 				12C37F8018A41AC900044933 /* SScannerController.m in Sources */,
-				12612F1018A5A79F004BB871 /* SPaperSize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
