@@ -10,7 +10,7 @@
     //If self is not nil after superclass init
     if (self = [super init]) {
         //Init sizes dictionary
-        _sizesDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[NSValue valueWithSize:NSMakeSize(21.0, 27.9)], @"A4",
+        _sizesDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[NSValue valueWithSize:NSMakeSize(21.0, 29.7)], @"A4",
                                                                         [NSValue valueWithSize:NSMakeSize(14.8, 21.0)], @"A5",
                                                                         [NSValue valueWithSize:NSMakeSize(10.5, 14.8)], @"A6",
                                                                         [NSValue valueWithSize:NSMakeSize(21.59, 27.94)], @"Letter", nil];
