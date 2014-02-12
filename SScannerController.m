@@ -88,6 +88,7 @@
     //Create pdf page from the data
     NSImage *image = [[NSImage alloc] initWithData:data];
     PDFPage *page = [[PDFPage alloc] initWithImage:image];
+    [image release];
     
     //If pdf view already has document, else if it doesn't
     if ([_pdfView document]) {
@@ -100,7 +101,9 @@
         [page setValue:@"1" forKey:@"label"];
         [document insertPage:page atIndex:0];
         [_pdfView setDocument:document];
+        [document release];
     }
+    [page release];
     
     //Force pdf view to redraw
     [_pdfView zoomIn:self];
@@ -151,6 +154,7 @@
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:@"ddMMyyyyHHmmss"];
 	NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
+    [dateFormatter release];
     
 	//Setup number & name
 	NSInteger number = 0;
