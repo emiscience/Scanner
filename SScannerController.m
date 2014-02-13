@@ -10,11 +10,14 @@
     //If self is not nil after superclass init
     if (self = [super init]) {
         //Init sizes dictionary
-        _sizesDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:[NSValue valueWithSize:NSMakeSize(21.0, 29.7)], @"A4",
-                                                                        [NSValue valueWithSize:NSMakeSize(14.8, 21.0)], @"A5",
-                                                                        [NSValue valueWithSize:NSMakeSize(10.5, 14.8)], @"A6",
-                                                                        [NSValue valueWithSize:NSMakeSize(21.59, 27.94)], @"Letter", nil];
+        _sizesDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
+            [NSValue valueWithSize:NSMakeSize(21.0, 29.7)], @"A4",
+            [NSValue valueWithSize:NSMakeSize(14.8, 21.0)], @"A5",
+            [NSValue valueWithSize:NSMakeSize(10.5, 14.8)], @"A6",
+            [NSValue valueWithSize:NSMakeSize(21.59, 27.94)], @"Letter", nil];
         
+        [_progressIndicator setHidden:YES];
+                
         //Init scanners array & setup scanners array controller
         _scanners = [[NSMutableArray alloc] initWithCapacity:0];
         [_scannersController setSelectsInsertedObjects:NO];
@@ -67,19 +70,21 @@
 	//If the scanner starts warming up, else if the scanner finished warming up
 	if ([[status objectForKey:ICStatusNotificationKey] isEqualToString:ICScannerStatusWarmingUp]) {
 		//Show indeterminate progress indicator
+        [_progressIndicator setHidden:NO];
         [_progressIndicator setIndeterminate:YES];
         [_progressIndicator startAnimation:nil];
     } else if ([[status objectForKey:ICStatusNotificationKey] isEqualToString:ICScannerStatusWarmUpDone]) {
 		//Hide indeterminate progress indicator
         [_progressIndicator stopAnimation:nil];
         [_progressIndicator setIndeterminate:NO];
+        [_progressIndicator setHidden:YES];
     }
 }
 
 //???: Better way to redraw pdf view
 - (void)scannerDevice:(ICScannerDevice *)scanner didScanToURL:(NSURL *)url data:(NSData *)data {
 	//Hide progress indicator
-	[_progressIndicator stopAnimation:nil];
+	[_progressIndicator setIndeterminate:YES];
     
     //Disable scan button & set title to scan
 	[_scanButton setEnabled:NO];
@@ -113,6 +118,8 @@
 - (void)scannerDevice:(ICScannerDevice *)scanner didCompleteScanWithError:(NSError *)error {
     //Enable scan button when scan is completed
 	[_scanButton setEnabled:YES];
+    [_progressIndicator setHidden:YES];
+    [_progressIndicator setIndeterminate:NO];
 }
 
 - (void)device:(ICDevice *)device didCloseSessionWithError:(NSError *)error {}
@@ -141,6 +148,7 @@
 		if ([[NSUserDefaults standardUserDefaults] integerForKey:@"kind"] == 0) [unit setBitDepth:ICScannerBitDepth1Bit]; else [unit setBitDepth:ICScannerBitDepth8Bits];
 		[scanner requestScan];
 		[_scanButton setTitle:@"Cancel"];
+        [_progressIndicator setHidden:NO];
     } else {
         //Cancel ongoing scan
         [scanner cancelScan];
@@ -173,6 +181,13 @@
 - (IBAction)reset:(id)sender {
 	//Remove document from pdf view
 	[_pdfView setDocument:nil];
+}
+
+- (IBAction)deletePage:(id)sender {
+    [[NSApplication sharedApplication] sendAction:@selector(delete:) to:nil from:nil];
+    for (int i = 0; i < [[_pdfView document] pageCount]; i++) {
+        [[[_pdfView document] pageAtIndex:i] setValue:[NSString stringWithFormat:@"%d", i + 1] forKey:@"label"];
+    }
 }
 
 @end

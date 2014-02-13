@@ -10,7 +10,6 @@
     //MARK: Instance Variable Outlets
     IBOutlet NSArrayController *_scannersController;
     IBOutlet PDFView *_pdfView;
-    IBOutlet PDFThumbnailView *_pdfThumbnailView;
     IBOutlet NSProgressIndicator *_progressIndicator;
     IBOutlet NSButton *_scanButton;
     IBOutlet NSPathControl *_pathControl;
@@ -28,5 +27,6 @@
 - (IBAction)scan:(id)sender;
 - (IBAction)save:(id)sender;
 - (IBAction)reset:(id)sender;
+- (IBAction)deletePage:(id)sender;
 
 @end

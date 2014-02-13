@@ -19,7 +19,8 @@
     if (![userDefaults doubleForKey:@"monochromeThreshold"]) [userDefaults setDouble:127.5 forKey:@"monochromeThreshold"];
 }
 
-- (BOOL)applicationShouldHandleReopen:(NSApplication *)application hasVisibleWindows:(BOOL)visibleWindows {   
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)application hasVisibleWindows:(BOOL)visibleWindows {
+    //If there are visible windows or else if there are none
     if (visibleWindows) {
         [_window orderFront:self];
     } else {
