@@ -10,6 +10,7 @@
     //MARK: Instance Variable Outlets
     IBOutlet NSArrayController *_scannersController;
     IBOutlet PDFView *_pdfView;
+    IBOutlet PDFThumbnailView *_pdfThumbnailView;
     IBOutlet NSProgressIndicator *_progressIndicator;
     IBOutlet NSButton *_scanButton;
     IBOutlet NSPathControl *_pathControl;
