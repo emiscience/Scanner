@@ -9,14 +9,20 @@
 //TODO: Set users defaults if not set
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
     //Set defaults if not yet set
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    if (![userDefaults objectForKey:@"directory"]) [userDefaults setObject:[NSArchiver archivedDataWithRootObject:[[NSFileManager defaultManager] URLForDirectory:NSDesktopDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil]] forKey:@"directory"];
-    if (![userDefaults integerForKey:@"kind"]) [userDefaults setInteger:1 forKey:@"kind"];
-    if (![userDefaults integerForKey:@"resolution"]) [userDefaults setInteger:3 forKey:@"resolution"];
-    if (![userDefaults integerForKey:@"size"]) [userDefaults setInteger:0 forKey:@"size"];
-    if (![userDefaults integerForKey:@"orientation"]) [userDefaults setInteger:0 forKey:@"orientation"];
-    if (![userDefaults boolForKey:@"usesMonochromeThreshold"]) [userDefaults setBool:NO forKey:@"usesMonochromeThreshold"];
-    if (![userDefaults doubleForKey:@"monochromeThreshold"]) [userDefaults setDouble:127.5 forKey:@"monochromeThreshold"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"directory"])
+        [[NSUserDefaults standardUserDefaults] setObject:[NSArchiver archivedDataWithRootObject:[[NSFileManager defaultManager] URLForDirectory:NSDesktopDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil]] forKey:@"directory"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"kind"])
+        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"kind"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"resolution"])
+        [[NSUserDefaults standardUserDefaults] setInteger:3 forKey:@"resolution"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"size"])
+        [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"size"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"orientation"])
+        [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"orientation"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"usesMonochromeThreshold"])
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"usesMonochromeThreshold"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"monochromeThreshold"])
+        [[NSUserDefaults standardUserDefaults] setDouble:127.5 forKey:@"monochromeThreshold"];
 }
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)application hasVisibleWindows:(BOOL)visibleWindows {
