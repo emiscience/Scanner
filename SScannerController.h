@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <Quartz/Quartz.h>
 #import <ImageCaptureCore/ImageCaptureCore.h>
+#import "SAppDelegate.h"
 
 @interface SScannerController : NSObject <NSApplicationDelegate, ICDeviceBrowserDelegate, ICScannerDeviceDelegate> {
     //MARK: - Instance Variables

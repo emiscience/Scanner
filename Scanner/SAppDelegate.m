@@ -9,20 +9,14 @@
 //TODO: Set users defaults if not set
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
     //Set defaults if not yet set
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"directory"])
-        [[NSUserDefaults standardUserDefaults] setObject:[NSArchiver archivedDataWithRootObject:[[NSFileManager defaultManager] URLForDirectory:NSDesktopDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil]] forKey:@"directory"];
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"kind"])
-        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"kind"];
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"resolution"])
-        [[NSUserDefaults standardUserDefaults] setInteger:3 forKey:@"resolution"];
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"size"])
-        [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"size"];
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"orientation"])
-        [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"orientation"];
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"usesMonochromeThreshold"])
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"usesMonochromeThreshold"];
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"monochromeThreshold"])
-        [[NSUserDefaults standardUserDefaults] setDouble:127.5 forKey:@"monochromeThreshold"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"directory"]) [[NSUserDefaults standardUserDefaults] setObject:[NSArchiver archivedDataWithRootObject:[[NSFileManager defaultManager] URLForDirectory:NSDesktopDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil]] forKey:@"directory"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"kind"]) [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"kind"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"resolution"]) [[NSUserDefaults standardUserDefaults] setInteger:3 forKey:@"resolution"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"size"]) [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"size"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"orientation"]) [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"orientation"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"usesMonochromeThreshold"]) [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"usesMonochromeThreshold"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"monochromeThreshold"]) [[NSUserDefaults standardUserDefaults] setDouble:127.5 forKey:@"monochromeThreshold"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"resetOnSave"]) [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"resetOnSave"];
 }
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)application hasVisibleWindows:(BOOL)visibleWindows {

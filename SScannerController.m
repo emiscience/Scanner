@@ -107,6 +107,8 @@
     }
     [page release];
     
+    [[(SAppDelegate *)[[NSApplication sharedApplication] delegate] window] setDocumentEdited:YES];
+    
     //Force pdf view to redraw
     [_pdfView zoomIn:self];
     [_pdfView setAutoScales:YES];
@@ -172,15 +174,25 @@
 	
 	//Save file to directory
 	[[_pdfView document] writeToURL:[[_pathControl URL] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf", name]]];
+
+    if ([[NSFileManager defaultManager] fileExistsAtPath:[[[_pathControl URL] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.pdf", name]] path]]) {
+        [[(SAppDelegate *)[[NSApplication sharedApplication] delegate] window] setDocumentEdited:NO];
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"resetOnSave"]) [_pdfView setDocument:nil];
+    } else {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Saving failed" defaultButton:@"Retry" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@"The document was not saved."];
+        [alert runModal];
+    }
 }
 
 - (IBAction)reset:(id)sender {
 	//Remove document from pdf view
 	[_pdfView setDocument:nil];
+    [[(SAppDelegate *)[[NSApplication sharedApplication] delegate] window] setDocumentEdited:NO];
 }
 
 - (IBAction)deletePage:(id)sender {
     [[NSApplication sharedApplication] sendAction:@selector(delete:) to:nil from:nil];
+    [[(SAppDelegate *)[[NSApplication sharedApplication] delegate] window] setDocumentEdited:YES];
     for (int i = 0; i < [[_pdfView document] pageCount]; i++) {
         [[[_pdfView document] pageAtIndex:i] setValue:[NSString stringWithFormat:@"%d", i + 1] forKey:@"label"];
     }
