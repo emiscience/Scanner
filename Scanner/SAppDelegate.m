@@ -35,4 +35,12 @@
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+//MARK: - Class Methods
+//MARK: Class Method Actions
+- (IBAction)reportBug:(id)sender {
+    //Create bug report sheet and present modal for _window
+    LKBugReportSheet *bugReportSheet = [[LKBugReportSheet alloc] initWithURL:[NSURL URLWithString:@"http://www.levidhuyvetter.me.uk/scripts/bugreport.php"]];
+    [NSApp beginSheet:bugReportSheet modalForWindow:_window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+}
+
 @end

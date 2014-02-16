@@ -1068,13 +1068,27 @@
 									<reference key="NSOnImage" ref="539106192"/>
 									<reference key="NSMixedImage" ref="463860214"/>
 								</object>
-								<object class="NSMenuItem" id="819258498">
+								<object class="NSMenuItem" id="561893037">
 									<reference key="NSMenu" ref="110575045"/>
 									<string key="NSTitle">Provide Feedback</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="539106192"/>
 									<reference key="NSMixedImage" ref="463860214"/>
+									<string key="NSAction">submenuAction:</string>
+									<object class="NSMenu" key="NSSubmenu" id="387125306">
+										<string key="NSTitle">Provide Feedback</string>
+										<array class="NSMutableArray" key="NSMenuItems">
+											<object class="NSMenuItem" id="804850592">
+												<reference key="NSMenu" ref="387125306"/>
+												<string key="NSTitle">Report a Bug...</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="539106192"/>
+												<reference key="NSMixedImage" ref="463860214"/>
+											</object>
+										</array>
+									</object>
 								</object>
 								<object class="NSMenuItem" id="586245008">
 									<reference key="NSMenu" ref="110575045"/>
@@ -1746,6 +1760,14 @@
 						<reference key="destination" ref="819535590"/>
 					</object>
 					<int key="connectionID">847</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">reportBug:</string>
+						<reference key="source" ref="246638972"/>
+						<reference key="destination" ref="804850592"/>
+					</object>
+					<int key="connectionID">1733</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -2566,8 +2588,8 @@
 							<reference ref="1056857174"/>
 							<reference ref="342932134"/>
 							<reference ref="415809062"/>
-							<reference ref="819258498"/>
 							<reference ref="586245008"/>
+							<reference ref="561893037"/>
 						</array>
 						<reference key="parent" ref="694149608"/>
 					</object>
@@ -3284,14 +3306,30 @@
 						<reference key="parent" ref="110575045"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">1702</int>
-						<reference key="object" ref="819258498"/>
-						<reference key="parent" ref="110575045"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">1703</int>
 						<reference key="object" ref="586245008"/>
 						<reference key="parent" ref="110575045"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1730</int>
+						<reference key="object" ref="561893037"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="387125306"/>
+						</array>
+						<reference key="parent" ref="110575045"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1731</int>
+						<reference key="object" ref="387125306"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="804850592"/>
+						</array>
+						<reference key="parent" ref="561893037"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1732</int>
+						<reference key="object" ref="804850592"/>
+						<reference key="parent" ref="387125306"/>
 					</object>
 				</array>
 			</object>
@@ -3360,8 +3398,10 @@
 				<string key="1693.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1694.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1701.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1702.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1703.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1730.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1731.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1732.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="23.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="236.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3438,7 +3478,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1703</int>
+			<int key="maxID">1733</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3486,6 +3526,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">SAppDelegate</string>
 					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">reportBug:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">reportBug:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">reportBug:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">window</string>
 						<string key="NS.object.0">NSWindow</string>

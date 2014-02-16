@@ -22,6 +22,7 @@
 		12998F5518A3BA0F00A5E253 /* SKindBWTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 12998F5218A3BA0F00A5E253 /* SKindBWTemplate.pdf */; };
 		12C37F7E18A41ABB00044933 /* SAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C37F7F18A41ABB00044933 /* SAppDelegate.m */; };
 		12C37F8018A41AC900044933 /* SScannerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C37F8118A41AC900044933 /* SScannerController.m */; };
+		12F1E37718B0409C0098B866 /* LeviKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F1E37618B0409C0098B866 /* LeviKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		12C37F7D18A41AB400044933 /* SAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SAppDelegate.h; path = Scanner/SAppDelegate.h; sourceTree = "<group>"; };
 		12C37F7F18A41ABB00044933 /* SAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SAppDelegate.m; path = Scanner/SAppDelegate.m; sourceTree = "<group>"; };
 		12C37F8118A41AC900044933 /* SScannerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SScannerController.m; sourceTree = "<group>"; };
+		12F1E37618B0409C0098B866 /* LeviKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeviKit.framework; path = Library/Frameworks/LeviKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12F1E37718B0409C0098B866 /* LeviKit.framework in Frameworks */,
 				1294E6EA18A6B25200FC7F8A /* AppKit.framework in Frameworks */,
 				1294E6E918A6B24000FC7F8A /* Foundation.framework in Frameworks */,
 				128D913D1896B64F000EDC89 /* ImageCaptureCore.framework in Frameworks */,
@@ -83,6 +86,7 @@
 		128D911C1896B361000EDC89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				12F1E37618B0409C0098B866 /* LeviKit.framework */,
 				128D91201896B361000EDC89 /* AppKit.framework */,
 				128D91221896B361000EDC89 /* Foundation.framework */,
 				128D913C1896B64F000EDC89 /* ImageCaptureCore.framework */,
